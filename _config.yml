@@ -6,9 +6,9 @@ baseurl:            "/blogs"
 url:                https://vipinragashetti.github.io"
 
 # Social Profiles
-twitter_username:   #SBootstrap
+#twitter_username:   #SBootstrap
 github_username:    vipin-tech
-facebook_username:  #StartBootstrap
+#facebook_username:  #StartBootstrap
 linkedin_username:  vipinragashetti
 
 # Add your google-analytics ID here to activate google analytics
