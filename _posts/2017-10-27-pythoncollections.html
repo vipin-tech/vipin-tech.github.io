@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Collections module in Python"
+subtitle: "python, python for data science, python data structures"
+date: 2017-10-27 23:45:13 -0400
+background: '/img/posts/01.jpg'
+---
+
+<p>Collections is a built-in Python module that implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers such as dict, list, set, and tuple.</p>
+
+<p>Some of the useful data structures present in this module are:</p>
+
+<h2 class="section-heading">namedtuple</h2>
+
+<p>The data stored in a plain tuple can only be accessed through indexes as can be seen in the example below:</p>
+
+<code>
+  plain_tuple = (10,11,12,13)
+  plain_tuple[0]
+  10
+  plain_tuple[3]
+  13
+</code>
+
+<p>We can’t give names to individual elements stored in a tuple. Now, this might not be needed in simple cases. However, in case a tuple has many fields this might be kind of a necessity and will also impact the code’s readability.
+It is here that namedtuple’s functionality comes into the picture. It is a function for tuples with Named Fields and can be seen as an extension of the built-in tuple data type. Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. Each object stored in them can be accessed through a unique (human-readable) identifier and this frees us from having to remember integer indexes. Let’s see its implementation.</p>
+
+<code>
+  from collections import namedtuple
+  fruit = namedtuple('fruit','number variety color')
+  guava = fruit(number=2,variety='HoneyCrisp',color='green')
+  apple = fruit(number=5,variety='Granny Smith',color='red')
+</code>
+
+<p>We construct the namedtuple by first passing the object type name (fruit) and then passing a string with the variety of fields as a string with spaces between the field names. We can then call on the various attributes:</p>
+
+<code>
+  guava.color
+  'green'
+  apple.variety
+  'Granny Smith'
+  </code>
