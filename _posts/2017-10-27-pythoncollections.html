@@ -92,7 +92,7 @@ Dictionaries are an efficient way to store data for later retrieval having an un
 from collections import defaultdict
 d = defaultdict(object)
 print(d['A'])
-<object object at 0x7fc9bed4cb00>
+object object at 0x7fc9bed4cb00
 </pre>
 
 The defaultdict in contrast will simply create any items that you try to access (provided of course they do not exist yet).The defaultdict is also a dictionary-like object and provides all methods provided by a dictionary. However, the point of difference is that it takes the first argument (default_factory) as a default data type for the dictionary.
