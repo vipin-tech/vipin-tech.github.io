@@ -6,13 +6,13 @@ date: 2017-10-27 23:45:13 -0400
 background: '/img/posts/01.jpg'
 ---
 
-<p>Collections is a built-in Python module that implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers such as dict, list, set, and tuple.</p>
+Collections is a built-in Python module that implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers such as dict, list, set, and tuple.
 
-<p>Some of the useful data structures present in this module are:</p>
+Some of the useful data structures present in this module are:
 
 <h3 class="section-heading">namedtuple</h3>
 
-<p>The data stored in a plain tuple can only be accessed through indexes as can be seen in the example below:</p>
+The data stored in a plain tuple can only be accessed through indexes as can be seen in the example below:
 
 <pre style="color:brown">
 plain_tuple = (10,11,12,13)
@@ -22,8 +22,8 @@ plain_tuple[3]
 13
 </pre>
 
-<p>We can’t give names to individual elements stored in a tuple. Now, this might not be needed in simple cases. However, in case a tuple has many fields this might be kind of a necessity and will also impact the code’s readability.
-It is here that namedtuple’s functionality comes into the picture. It is a function for tuples with Named Fields and can be seen as an extension of the built-in tuple data type. Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. Each object stored in them can be accessed through a unique (human-readable) identifier and this frees us from having to remember integer indexes. Let’s see its implementation.</p>
+We can’t give names to individual elements stored in a tuple. Now, this might not be needed in simple cases. However, in case a tuple has many fields this might be kind of a necessity and will also impact the code’s readability.
+It is here that namedtuple’s functionality comes into the picture. It is a function for tuples with Named Fields and can be seen as an extension of the built-in tuple data type. Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. Each object stored in them can be accessed through a unique (human-readable) identifier and this frees us from having to remember integer indexes. Let’s see its implementation.
 
 <pre style="color:brown">
 from collections import namedtuple
@@ -32,7 +32,7 @@ guava = fruit(number=2,variety='HoneyCrisp',color='green')
 apple = fruit(number=5,variety='Granny Smith',color='red')
 </pre>
 
-<p>We construct the namedtuple by first passing the object type name (fruit) and then passing a string with the variety of fields as a string with spaces between the field names. We can then call on the various attributes:</p>
+We construct the namedtuple by first passing the object type name (fruit) and then passing a string with the variety of fields as a string with spaces between the field names. We can then call on the various attributes:
 
 <pre style="color:brown">
 guava.color
@@ -43,7 +43,7 @@ apple.variety
 
 
 <h3 class="section-heading">counter</h3>
-<p>Counter is a dict subclass which helps to count hashable objects. The elements are stored as dictionary keys while the object counts are stored as the value. Let’s work through a few examples with Counter.</p>
+Counter is a dict subclass which helps to count hashable objects. The elements are stored as dictionary keys while the object counts are stored as the value. Let’s work through a few examples with Counter.
 
 <pre style="color:brown">
 # Importing Counter from collections
@@ -67,7 +67,7 @@ Counter(words)
 Counter('another': 1, 'dog': 2, 'attacked': 1, 'lazy': 2, 'over': 1, 'the': 1)
 </pre>
 
-<p>Common functions on counter object</p>
+Common functions on counter object
 
 <pre style="color:brown">
 sum(c.values())                 # total of all counts
@@ -83,7 +83,7 @@ c += Counter()                  # remove zero and negative counts
 
 <h3 class="section-heading">defaultdict</h3>
 
-<p>Dictionaries are an efficient way to store data for later retrieval having an unordered set of key: value pairs. Keys must be unique and immutable objects.</p>
+Dictionaries are an efficient way to store data for later retrieval having an unordered set of key: value pairs. Keys must be unique and immutable objects.
 
 <pre style="color:brown">
 </pre>
@@ -95,11 +95,11 @@ print(d['A'])
 <object object at 0x7fc9bed4cb00>
 </pre>
 
-<p>The defaultdict in contrast will simply create any items that you try to access (provided of course they do not exist yet).The defaultdict is also a dictionary-like object and provides all methods provided by a dictionary. However, the point of difference is that it takes the first argument (default_factory) as a default data type for the dictionary.</p>
+The defaultdict in contrast will simply create any items that you try to access (provided of course they do not exist yet).The defaultdict is also a dictionary-like object and provides all methods provided by a dictionary. However, the point of difference is that it takes the first argument (default_factory) as a default data type for the dictionary.
 
 <h3 class="section-heading">OrderedDict</h3>
 
-<p>An OrderedDict is a dictionary subclass that remembers the order in which that keys were first inserted. When iterating over an ordered dictionary, the items are returned in the order their keys were first added. Since an ordered dictionary remembers its insertion order, it can be used in conjunction with sorting to make a sorted dictionary</p>
+An OrderedDict is a dictionary subclass that remembers the order in which that keys were first inserted. When iterating over an ordered dictionary, the items are returned in the order their keys were first added. Since an ordered dictionary remembers its insertion order, it can be used in conjunction with sorting to make a sorted dictionary
 
 Dictionary ordered by key
 
