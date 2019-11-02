@@ -14,7 +14,7 @@ background: '/img/posts/01.jpg'
 
 <p>The data stored in a plain tuple can only be accessed through indexes as can be seen in the example below:</p>
 
-<pre><code>
+<code>
 plain_tuple = (10,11,12,13)
 plain_tuple[0]
 10
@@ -25,7 +25,7 @@ plain_tuple[3]
 <p>We can’t give names to individual elements stored in a tuple. Now, this might not be needed in simple cases. However, in case a tuple has many fields this might be kind of a necessity and will also impact the code’s readability.
 It is here that namedtuple’s functionality comes into the picture. It is a function for tuples with Named Fields and can be seen as an extension of the built-in tuple data type. Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. Each object stored in them can be accessed through a unique (human-readable) identifier and this frees us from having to remember integer indexes. Let’s see its implementation.</p>
 
-<pre><code>
+<code>
 from collections import namedtuple
 fruit = namedtuple('fruit','number variety color')
 guava = fruit(number=2,variety='HoneyCrisp',color='green')
@@ -34,7 +34,7 @@ apple = fruit(number=5,variety='Granny Smith',color='red')
 
 <p>We construct the namedtuple by first passing the object type name (fruit) and then passing a string with the variety of fields as a string with spaces between the field names. We can then call on the various attributes:</p>
 
-<pre><code>
+<code>
 guava.color
 'green'
 apple.variety
@@ -45,7 +45,7 @@ apple.variety
 <h3 class="section-heading">counter</h3>
 <p>Counter is a dict subclass which helps to count hashable objects. The elements are stored as dictionary keys while the object counts are stored as the value. Let’s work through a few examples with Counter.</p>
 
-<pre><code>
+<code>
 # Importing Counter from collections
 
 from collections import Counter
@@ -73,7 +73,7 @@ Counter('another': 1, 'dog': 2, 'attacked': 1, 'lazy': 2, 'over': 1, 'the': 1)
 
 <p>Common functions on counter object</p>
 
-<pre><code>
+<code>
 sum(c.values())                 # total of all counts
 c.clear()                       # reset all counts
 list(c)                         # list unique elements
@@ -89,10 +89,10 @@ c += Counter()                  # remove zero and negative counts
 
 <p>Dictionaries are an efficient way to store data for later retrieval having an unordered set of key: value pairs. Keys must be unique and immutable objects.</p>
 
-<pre><code>
+<code>
 </code></pre>
 
-<pre><code>
+<code>
 from collections import defaultdict
 d = defaultdict(object)
 print(d['A'])
@@ -107,19 +107,19 @@ print(d['A'])
 
 <p>Dictionary ordered by key</p>
 
-<pre><code>
+<code>
 OrderedDict(sorted(d.items(), key=lambda t: t[0]))
 OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
 </code></pre>
 
 <p>Dictionary ordered by value</p>
-<pre><code>
+<code>
 OrderedDict(sorted(d.items(), key=lambda t: t[1]))
 OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
 </code></pre>
 
 <p>Dictionary ordered by length of key string</p>
-<pre><code>
+<code>
 OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))
 OrderedDict([('pear', 1), ('apple', 4), ('banana', 3), ('orange', 2)])
 </code></pre>
