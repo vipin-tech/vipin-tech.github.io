@@ -93,6 +93,7 @@ from collections import defaultdict
 d = defaultdict(object)
 print(d['A'])
 object object at 0x7fc9bed4cb00
+
 </pre>
 
 <p>The defaultdict in contrast will simply create any items that you try to access (provided of course they do not exist yet).The defaultdict is also a dictionary-like object and provides all methods provided by a dictionary. However, the point of difference is that it takes the first argument (default_factory) as a default data type for the dictionary.</p>
@@ -106,16 +107,128 @@ object object at 0x7fc9bed4cb00
 <pre style="color:brown">
 OrderedDict(sorted(d.items(), key=lambda t: t[0]))
 OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+
 </pre>
 
 <p>Dictionary ordered by value</p>
 <pre style="color:brown">
 OrderedDict(sorted(d.items(), key=lambda t: t[1]))
 OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
+
 </pre>
 
 <p>Dictionary ordered by length of key string</p>
 <pre style="color:brown">
 OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))
 OrderedDict([('pear', 1), ('apple', 4), ('banana', 3), ('orange', 2)])
+
 </pre>
+
+
+<h3 class="section-heading">deque</h3>
+deque is the list optimised for inserting and removing items.
+
+<pre style="color:brown">
+from collections import deque
+
+list = ["a","b","c"]
+deq = deque(list)
+print(deq)
+
+deque(['a', 'b', 'c'])
+
+</pre>
+
+Inserting elements into deque
+
+<p>You can easily insert an element to the deq we created at either of the ends. To add an element to the right of the deque, you have to use append() method.</p>
+
+<p>If you want to add an element to the start of the deque, you have to use appendleft() method.</p>
+
+<pre style="color:brown">
+deq.append("d")
+deq.appendleft("e")
+print(deq)
+
+deque(['e', 'a', 'b', 'c', 'd'])
+
+</pre>
+
+Removing elements from deque
+
+<p>Removing elements is similar to inserting elements. You can remove an element the similar way you insert elements. To remove an element from the right end, you can use pop() function and to remove an element from left, you can use popleft().</p>
+
+<pre style="color:brown">
+deq.pop()
+deq.popleft()
+print(deq)
+
+deque(['a', 'b', 'c'])
+
+</pre>
+
+Clearing deque and counting each element in deque
+<pre style="color:brown">
+
+# Clearing the deque
+
+list = ["a","b","c"]
+deq = deque(list)
+print(deq)
+print(deq.clear())
+
+# Counting each element
+list = ["a","b","c"]
+deq = deque(list)
+print(deq.count("a"))
+
+</pre>
+
+<h3 class="section-heading">ChainMap</h3>
+
+ChainMap is used to combine several dictionaries or mappings. It returns a list of dictionaries.
+
+<p>Creating the ChainMap</p>
+<p>To create a chainmap we can use ChainMap() constructor. We have to pass the dictionaries we are going to combine as an argument set.</p>
+
+<pre style="color:brown">
+dict1 = { 'a' : 1, 'b' : 2 }
+dict2 = { 'c' : 3, 'b' : 4 }
+chain_map = ChainMap(dict1, dict2)
+print(chain_map.maps)
+[{'b': 2, 'a': 1}, {'c': 3, 'b': 4}]
+
+</pre>
+
+<p>Another important point is ChainMap updates its values when its associated dictionaries are updated. For example, if you change the value of 'c' in dict2 to '5', you will notice the change in ChainMap as well.</p>
+
+<pre style="color:brown">
+dict2['c'] = 5
+print(chain_map.maps)
+
+[{'a': 1, 'b': 2}, {'c': 5, 'b': 4}]
+</pre>
+
+<p>Getting keys and values from ChainMap</p>
+<pre style="color:brown">
+dict1 = { 'a' : 1, 'b' : 2 }
+dict2 = { 'c' : 3, 'b' : 4 }
+chain_map = ChainMap(dict1, dict2)
+print (list(chain_map.keys()))
+print (list(chain_map.values()))
+</pre>
+
+<p>Adding new dictionary to ChainMap</p>
+
+
+<pre style="color:brown">
+dict3 = {'e' : 5, 'f' : 6}
+new_chain_map = chain_map.new_child(dict3)
+print(new_chain_map)
+
+ChainMap({'f': 6, 'e': 5}, {'a': 1, 'b': 2}, {'b': 4, 'c': 3})
+</pre>
+
+
+<font color="grey"><i>Python collection module still needs improvements and features as compared to Java collection library.
+We can except changes in upcoming python releases.</i></font>
