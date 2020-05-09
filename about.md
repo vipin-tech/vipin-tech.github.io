@@ -3,7 +3,6 @@ layout: single
 title: Hello.
 header:
   image: "/img/bg-about.jpg"
-permalink: /about/
 author: "Vipin Ragashetti"
 author_profile: true
 description: "I am Vipin, a tech guy, ex-HPE'ian and currently purusing Masters at University College Dublin."
