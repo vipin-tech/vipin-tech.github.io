@@ -2,7 +2,7 @@
 layout: single
 header:
   image: "/img/bg-about.jpg"
-  
+
 author: "Vipin Ragashetti"
 author_profile: true
 description: "I am Vipin, a tech guy, ex-HPE'ian and currently purusing Masters at University College Dublin."
