@@ -17,6 +17,21 @@ markdown:           kramdown
 paginate:           5
 paginate_path:      "/posts/page:num/"
 
+
+# Site Author
+author:
+  name             : "Vipin Ragashetti"
+  avatar           : /assets/images/photo.jpg
+  bio              : "Avid Tech Reader, API Guy, Pythonista, Linux Administration."
+  location         : "Curating the Web"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:vipin.ragashetti@gmail.com
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/RagashettiVipin"
+
 plugins:
   - jekyll-feed
   - jekyll-paginate

@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Real Time Tweet Monitoring Tool of COVID-19 using the ELK stack"
+subtitle: "Python, BeautifulSoup, Tableau Public"
+date: 2020-05-27 17:00:13 -0400
+background: '/img/posts/09.jpg'
+---
+
+<p> Designed and Implemented the Real Time Tweet Monitoring Tool realated to COVID-19 using the technologies python, apscheduler, Elastic Search, Logstash and Kibana. </p>
+
+<p> The first thing of any analysis is the gathering of the data. I made use of twitter public API along with filters like recent twets to fetch the latest data related to COVID-19. The main challenge
+  I faced was the resriction of twitter's rate limit during the fectching the data. The Standard Twitter API can return maximum of 100 tweets per requests and we can make 180 requests
+  in time period of 15 minutes. In order to manually fetch the data, I designed and developed the python scheduler where we can gather data based on the frequency which can be set in config file tweet.cfg.
+  Logs are being gathered in tweet.log incase of any issues in the tool. </p>
+
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-01.jpg" alt="" class="full">
+
+
+<p> Sentiment of each tweet is calculated using the TextBlob library which is based on NLTK. TextBlob calculates the sentiment of each tweet by averaging polarity and subjectivity for each word which has been
+    assigned by language linguists. I am fectching only the tweets written in english. Live Data that is being collected is ingested into Elastic Search Cluster using Logstash. Logstash is the tool used to collect,
+    process and forward events and log messages. Elastic search is the serach engine based on the Lucene library. It provides the HTTP web based interface and schema free JSON documents. Kibana is the opensource data
+    visualization dashboard for Elastic Search. Above is the Dashboard snap where I calcuated Total Tweets collected, Positive Tweets and Negative Tweets. I also computed how many were retweets in collected tweets.
+    Elastic Search provides extension package called X-pack which provides the services like security, alerting, machine learning etc. but this the  paid service and need to purchase the license. </p>
+
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-02.jpg" alt="" class="full">
+
+<p>Overall, ELK stack is the very handy tool when it comes to monitoring the application logs and develop the monitoring tool. </p>
