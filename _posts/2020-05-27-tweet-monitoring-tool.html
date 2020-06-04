@@ -14,9 +14,6 @@ background: '/img/bg-index.jpg'
   Logs are being gathered in tweet.log incase of any issues in the tool. </p>
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-01.jpg" alt="">
-
-
 <p> Sentiment of each tweet is calculated using the TextBlob library which is based on NLTK. TextBlob calculates the sentiment of each tweet by averaging polarity and subjectivity for each word which has been
     assigned by language linguists. I am fectching only the tweets written in english. Live Data that is being collected is ingested into Elastic Search Cluster using Logstash. Logstash is the tool used to collect,
     process and forward events and log messages. Elastic search is the serach engine based on the Lucene library. It provides the HTTP web based interface and schema free JSON documents. Kibana is the opensource data
@@ -24,6 +21,14 @@ background: '/img/bg-index.jpg'
     Elastic Search provides extension package called X-pack which provides the services like security, alerting, machine learning etc. but this the  paid service and need to purchase the license. </p>
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-02.jpg" alt="">
+<div class="row">
+  <div class="column">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-01.jpg" alt="" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/images/tweet-02.jpg" alt="" style="width:100%">
+  </div>
+</div>
+
 
 <p>Overall, ELK stack is the very handy tool when it comes to monitoring the application logs and develop the monitoring tool. </p>
