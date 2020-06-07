@@ -14,38 +14,32 @@ REST APIs and using them for more than 4 years. I feel below are the few points 
   <li><b>Avoid using Verbs, Think about nouns</b>: RESTful APIs are are based on nouns - you will be performing actions on the entities. And these entities
   we call as resources and they are meant to do something. Consider an example: </li>
 
-  <pre style="color:red">
-
+  <pre style="color:darkblue">
   POST /orders
   GET /items
   GET /items/id
-
   </pre>
-
 
 versus
 
-
-  <pre style="color:blue">
-
+  <pre style="color:darkbrown">
   POST /createNewOrders
   GET /getAllItems
   GET /getItemsById/id
-
   </pre>
 
   The former is more intuitive and follow the common pattern than latter one. Consumers of your endpoints will find it easy to consume the API.
 
 <li><b>Prevent breaking APIs in Production</b>: Once the API is consumed and published, your API should not change the significant way. If there are any bugs in existing APIs you can fix them as long as it doesn't
-  change your API functionality. If you want to introduce the breaking change, inform your consumers well in advance and carry out integration tests to confirm everything works correctly with new changes from their side.</li>
+  change your API functionality. If you want to introduce the breaking change, inform your API consumers well in advance and carry out integration tests to confirm everything works correctly with new changes from their side.</li>
 
 <li><b>Be consistent with APIs</b>: Tie the proper verb with the action on the resource you are performing. For example, use GETs to get the list of items, use POST/PUT to change the value in orders/cart. Also use few proper
 HTTP status error codes and keep them consistent through your project.</li>
 
 <li><b>Use Versioning</b>: Businesses are bound to change and the processes change. Version your API when designing the new APIs. There are different ways in which developers version their API accept version in one of the headers,
-use the version in the URL etc. The best practice is to put the version in the URL like POST <i>uri/v2/orders</i></li>
+use the version in the URL etc. The best practice is to put the version in the URL like: POST <i>uri/v2/orders</i></li>
 
-<li><b>Keep your APIs simple</b>: Keep the response response/ DTO consistent and simple. This will help consumers or other developers consuming your API. Pick one response structure and aligin to it.</li>
+<li><b>Keep your APIs simple</b>: Keep the response response/ DTO consistent and simple. This will help consumers or other developers consuming your API. Pick one response structure and align to it.</li>
 
 <li><b>Document your API well</b>: This is one of the most priority item as it would save tons of trouble down the road. This will get less developers asking you the questions all the time. </li>
 
